@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_AdminEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AdminEkran.Designer.cs">
+      <DependentUpon>frm_AdminEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AdminLogin.Designer.cs">
+      <DependentUpon>frm_AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_AracEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +76,41 @@
     <Compile Include="frm_AracSil.Designer.cs">
       <DependentUpon>frm_AracSil.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_KiralamaGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_KiralamaGoruntule.Designer.cs">
+      <DependentUpon>frm_KiralamaGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PersonelEkle.Designer.cs">
+      <DependentUpon>frm_PersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PersonelSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PersonelSil.Designer.cs">
+      <DependentUpon>frm_PersonelSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RezervasyonGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RezervasyonGoruntule.Designer.cs">
+      <DependentUpon>frm_RezervasyonGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Secim.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Secim.Designer.cs">
       <DependentUpon>frm_Secim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SirketEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SirketEkle.Designer.cs">
+      <DependentUpon>frm_SirketEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_SirketEkran.cs">
       <SubType>Form</SubType>
@@ -84,6 +126,12 @@
     <Compile Include="frm_Sirket.Designer.cs">
       <DependentUpon>frm_Sirket.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frm_AdminEkran.resx">
+      <DependentUpon>frm_AdminEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AdminLogin.resx">
+      <DependentUpon>frm_AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_AracEkle.resx">
       <DependentUpon>frm_AracEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,8 +141,23 @@
     <EmbeddedResource Include="frm_AracSil.resx">
       <DependentUpon>frm_AracSil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_KiralamaGoruntule.resx">
+      <DependentUpon>frm_KiralamaGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PersonelEkle.resx">
+      <DependentUpon>frm_PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PersonelSil.resx">
+      <DependentUpon>frm_PersonelSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RezervasyonGoruntule.resx">
+      <DependentUpon>frm_RezervasyonGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Secim.resx">
       <DependentUpon>frm_Secim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SirketEkle.resx">
+      <DependentUpon>frm_SirketEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SirketEkran.resx">
       <DependentUpon>frm_SirketEkran.cs</DependentUpon>

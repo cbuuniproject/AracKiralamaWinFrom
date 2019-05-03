@@ -16,7 +16,7 @@ namespace AracKiralamaSistemi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_SecimEkrani());
+            Application.Run(new frm_SirketEkle());
         }
     }
 }

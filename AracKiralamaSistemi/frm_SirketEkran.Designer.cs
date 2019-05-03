@@ -39,9 +39,7 @@
             this.personelGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiralamaVeRezervasyonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiralamaGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kiralamaSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervasyonGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rezervasyonSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,19 +68,19 @@
             // araçEklemeToolStripMenuItem1
             // 
             this.araçEklemeToolStripMenuItem1.Name = "araçEklemeToolStripMenuItem1";
-            this.araçEklemeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.araçEklemeToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.araçEklemeToolStripMenuItem1.Text = "Araç Ekle";
             // 
             // araçSilmeToolStripMenuItem
             // 
             this.araçSilmeToolStripMenuItem.Name = "araçSilmeToolStripMenuItem";
-            this.araçSilmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.araçSilmeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.araçSilmeToolStripMenuItem.Text = "Araç Sil";
             // 
             // araçGüncelleToolStripMenuItem
             // 
             this.araçGüncelleToolStripMenuItem.Name = "araçGüncelleToolStripMenuItem";
-            this.araçGüncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.araçGüncelleToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.araçGüncelleToolStripMenuItem.Text = "Araç Güncelle";
             // 
             // personelİşlemleriToolStripMenuItem
@@ -117,9 +115,7 @@
             // 
             this.kiralamaVeRezervasyonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kiralamaGörüntüleToolStripMenuItem,
-            this.kiralamaSilToolStripMenuItem,
-            this.rezervasyonGörüntüleToolStripMenuItem,
-            this.rezervasyonSilToolStripMenuItem});
+            this.rezervasyonGörüntüleToolStripMenuItem});
             this.kiralamaVeRezervasyonToolStripMenuItem.Name = "kiralamaVeRezervasyonToolStripMenuItem";
             this.kiralamaVeRezervasyonToolStripMenuItem.Size = new System.Drawing.Size(148, 20);
             this.kiralamaVeRezervasyonToolStripMenuItem.Text = "Kiralama ve Rezervasyon";
@@ -130,23 +126,11 @@
             this.kiralamaGörüntüleToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.kiralamaGörüntüleToolStripMenuItem.Text = "Kiralama Görüntüle";
             // 
-            // kiralamaSilToolStripMenuItem
-            // 
-            this.kiralamaSilToolStripMenuItem.Name = "kiralamaSilToolStripMenuItem";
-            this.kiralamaSilToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.kiralamaSilToolStripMenuItem.Text = "Kiralama Sil";
-            // 
             // rezervasyonGörüntüleToolStripMenuItem
             // 
             this.rezervasyonGörüntüleToolStripMenuItem.Name = "rezervasyonGörüntüleToolStripMenuItem";
             this.rezervasyonGörüntüleToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.rezervasyonGörüntüleToolStripMenuItem.Text = "Rezervasyon Görüntüle";
-            // 
-            // rezervasyonSilToolStripMenuItem
-            // 
-            this.rezervasyonSilToolStripMenuItem.Name = "rezervasyonSilToolStripMenuItem";
-            this.rezervasyonSilToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.rezervasyonSilToolStripMenuItem.Text = "Rezervasyon Sil";
             // 
             // frm_SirketEkran
             // 
@@ -177,8 +161,6 @@
         private System.Windows.Forms.ToolStripMenuItem personelGüncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kiralamaVeRezervasyonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kiralamaGörüntüleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kiralamaSilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rezervasyonGörüntüleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rezervasyonSilToolStripMenuItem;
     }
 }
