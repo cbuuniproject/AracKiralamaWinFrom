@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertCalisan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Calisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Calisan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="calisanId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kullaniciId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullanici" type="tns:Kullanici" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sirket">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirketAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sehir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aracSayisi" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketPuani" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Kullanici">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="kullaniciId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullaniciAd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="parola" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullaniciTuru" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCalisanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCalisanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCalisan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calisanId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCalisanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCalisanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllCalisans">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllCalisansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllCalisansResult" type="tns:ArrayOfCalisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalisan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Calisan" nillable="true" type="tns:Calisan" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectCalisanById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calisanId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectCalisanByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectCalisanByIdResult" type="tns:Calisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertCalisanSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCalisan" />
+  </wsdl:message>
+  <wsdl:message name="InsertCalisanSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCalisanResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCalisanSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCalisan" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCalisanSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCalisanResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllCalisansSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllCalisans" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllCalisansSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllCalisansResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectCalisanByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectCalisanById" />
+  </wsdl:message>
+  <wsdl:message name="SelectCalisanByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectCalisanByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalisanWebServiceSoap">
+    <wsdl:operation name="InsertCalisan">
+      <wsdl:input message="tns:InsertCalisanSoapIn" />
+      <wsdl:output message="tns:InsertCalisanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCalisan">
+      <wsdl:input message="tns:DeleteCalisanSoapIn" />
+      <wsdl:output message="tns:DeleteCalisanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCalisans">
+      <wsdl:input message="tns:SelectAllCalisansSoapIn" />
+      <wsdl:output message="tns:SelectAllCalisansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCalisanById">
+      <wsdl:input message="tns:SelectCalisanByIdSoapIn" />
+      <wsdl:output message="tns:SelectCalisanByIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalisanWebServiceSoap" type="tns:CalisanWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertCalisan">
+      <soap:operation soapAction="http://tempuri.org/InsertCalisan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCalisan">
+      <soap:operation soapAction="http://tempuri.org/DeleteCalisan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCalisans">
+      <soap:operation soapAction="http://tempuri.org/SelectAllCalisans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCalisanById">
+      <soap:operation soapAction="http://tempuri.org/SelectCalisanById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalisanWebServiceSoap12" type="tns:CalisanWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertCalisan">
+      <soap12:operation soapAction="http://tempuri.org/InsertCalisan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCalisan">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCalisan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCalisans">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllCalisans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCalisanById">
+      <soap12:operation soapAction="http://tempuri.org/SelectCalisanById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalisanWebService">
+    <wsdl:port name="CalisanWebServiceSoap" binding="tns:CalisanWebServiceSoap">
+      <soap:address location="http://localhost:61799/CalisanWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalisanWebServiceSoap12" binding="tns:CalisanWebServiceSoap12">
+      <soap12:address location="http://localhost:61799/CalisanWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
