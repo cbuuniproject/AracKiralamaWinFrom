@@ -28,39 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnKiralamaSil = new System.Windows.Forms.Button();
-            this.dgwKiralamaListesi = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwKiralamaListesi)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // btnKiralamaSil
-            // 
-            this.btnKiralamaSil.Location = new System.Drawing.Point(618, 359);
-            this.btnKiralamaSil.Name = "btnKiralamaSil";
-            this.btnKiralamaSil.Size = new System.Drawing.Size(170, 79);
-            this.btnKiralamaSil.TabIndex = 3;
-            this.btnKiralamaSil.Text = "Kiralama Sil";
-            this.btnKiralamaSil.UseVisualStyleBackColor = true;
-            // 
-            // dgwKiralamaListesi
-            // 
-            this.dgwKiralamaListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwKiralamaListesi.Location = new System.Drawing.Point(12, 12);
-            this.dgwKiralamaListesi.Name = "dgwKiralamaListesi";
-            this.dgwKiralamaListesi.Size = new System.Drawing.Size(776, 341);
-            this.dgwKiralamaListesi.TabIndex = 2;
-            // 
-            // frm_KiralamaGoruntule
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnKiralamaSil);
-            this.Controls.Add(this.dgwKiralamaListesi);
-            this.Name = "frm_KiralamaGoruntule";
-            this.Text = "frm_KiralamaGoruntule";
-            ((System.ComponentModel.ISupportInitialize)(this.dgwKiralamaListesi)).EndInit();
-            this.ResumeLayout(false);
+			this.btnKiralamaSil = new System.Windows.Forms.Button();
+			this.dgwKiralamaListesi = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dgwKiralamaListesi)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// btnKiralamaSil
+			// 
+			this.btnKiralamaSil.Location = new System.Drawing.Point(442, 444);
+			this.btnKiralamaSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnKiralamaSil.Name = "btnKiralamaSil";
+			this.btnKiralamaSil.Size = new System.Drawing.Size(227, 97);
+			this.btnKiralamaSil.TabIndex = 3;
+			this.btnKiralamaSil.Text = "Kiralama Listele";
+			this.btnKiralamaSil.UseVisualStyleBackColor = true;
+			this.btnKiralamaSil.Click += new System.EventHandler(this.btnKiralamaSil_Click);
+			// 
+			// dgwKiralamaListesi
+			// 
+			this.dgwKiralamaListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwKiralamaListesi.Location = new System.Drawing.Point(16, 15);
+			this.dgwKiralamaListesi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dgwKiralamaListesi.Name = "dgwKiralamaListesi";
+			this.dgwKiralamaListesi.Size = new System.Drawing.Size(1035, 420);
+			this.dgwKiralamaListesi.TabIndex = 2;
+			// 
+			// frm_KiralamaGoruntule
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1067, 554);
+			this.Controls.Add(this.btnKiralamaSil);
+			this.Controls.Add(this.dgwKiralamaListesi);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Name = "frm_KiralamaGoruntule";
+			this.Text = "Kiralama Goruntule";
+			this.Load += new System.EventHandler(this.frm_KiralamaGoruntule_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dgwKiralamaListesi)).EndInit();
+			this.ResumeLayout(false);
 
         }
 

@@ -31,11 +31,17 @@ namespace AracKiralamaSistemi
         {
             frm_SecimEkrani secimEkrani = new frm_SecimEkrani();
             secimEkrani.Show();
+			this.Hide();
         }
 
         private void Btn_Giris_Click(object sender, EventArgs e)
         {
-
+			if (txtKullaniciAdi.Text=="admin"&&txtSifre.Text=="123")
+			{
+				frm_SirketEkran frm_SirketEkran = new frm_SirketEkran();
+				frm_SirketEkran.ShowDialog();
+				this.Hide();
+			}
         }
     }
 }

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace AracKiralamaSistemi
 {
-	public partial class frm_SirketEkle : Form
+	public partial class frm_Secim : Form
 	{
-		public frm_SirketEkle()
+		public frm_Secim()
 		{
 			InitializeComponent();
 		}

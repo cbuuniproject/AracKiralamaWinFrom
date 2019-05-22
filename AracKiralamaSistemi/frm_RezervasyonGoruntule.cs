@@ -16,5 +16,10 @@ namespace AracKiralamaSistemi
         {
             InitializeComponent();
         }
-    }
+
+		private void frm_RezervasyonGoruntule_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

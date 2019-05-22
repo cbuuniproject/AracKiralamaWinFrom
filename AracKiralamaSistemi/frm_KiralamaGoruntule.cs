@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AracKiralamaSistemi.KiralamaService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,21 @@ namespace AracKiralamaSistemi
         {
             InitializeComponent();
         }
-    }
+
+		private void frm_KiralamaGoruntule_Load(object sender, EventArgs e)
+		{
+			using (var kiralamaSoapClient = new KiralamaWebServiceSoapClient())
+			{
+			 dgwKiralamaListesi.DataSource=	kiralamaSoapClient.SelectAllKiralamas();
+			}
+		}
+
+		private void btnKiralamaSil_Click(object sender, EventArgs e)
+		{
+			using (var kiralamaSoapClient = new KiralamaWebServiceSoapClient())
+			{
+				dgwKiralamaListesi.DataSource = kiralamaSoapClient.SelectAllKiralamas();
+			}
+		}
+	}
 }

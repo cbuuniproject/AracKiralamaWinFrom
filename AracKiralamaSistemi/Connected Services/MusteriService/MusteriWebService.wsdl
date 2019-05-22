@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertMusteri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Musteri" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Musteri">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="musteriId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kullaniciId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullanici" type="tns:Kullanici" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Kullanici">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="kullaniciId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullaniciAd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="parola" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kullaniciTuru" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertMusteriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertMusteriResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMusteri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="musteriId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMusteriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMusteriResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllMusteris">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllMusterisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllMusterisResult" type="tns:ArrayOfMusteri" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMusteri">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Musteri" nillable="true" type="tns:Musteri" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectMusteriById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="musteriId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectMusteriByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectMusteriByIdResult" type="tns:Musteri" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertMusteriSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertMusteri" />
+  </wsdl:message>
+  <wsdl:message name="InsertMusteriSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertMusteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMusteriSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMusteri" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMusteriSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMusteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllMusterisSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllMusteris" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllMusterisSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllMusterisResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectMusteriByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectMusteriById" />
+  </wsdl:message>
+  <wsdl:message name="SelectMusteriByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectMusteriByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MusteriWebServiceSoap">
+    <wsdl:operation name="InsertMusteri">
+      <wsdl:input message="tns:InsertMusteriSoapIn" />
+      <wsdl:output message="tns:InsertMusteriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMusteri">
+      <wsdl:input message="tns:DeleteMusteriSoapIn" />
+      <wsdl:output message="tns:DeleteMusteriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllMusteris">
+      <wsdl:input message="tns:SelectAllMusterisSoapIn" />
+      <wsdl:output message="tns:SelectAllMusterisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMusteriById">
+      <wsdl:input message="tns:SelectMusteriByIdSoapIn" />
+      <wsdl:output message="tns:SelectMusteriByIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MusteriWebServiceSoap" type="tns:MusteriWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertMusteri">
+      <soap:operation soapAction="http://tempuri.org/InsertMusteri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMusteri">
+      <soap:operation soapAction="http://tempuri.org/DeleteMusteri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllMusteris">
+      <soap:operation soapAction="http://tempuri.org/SelectAllMusteris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMusteriById">
+      <soap:operation soapAction="http://tempuri.org/SelectMusteriById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MusteriWebServiceSoap12" type="tns:MusteriWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertMusteri">
+      <soap12:operation soapAction="http://tempuri.org/InsertMusteri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMusteri">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMusteri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllMusteris">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllMusteris" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMusteriById">
+      <soap12:operation soapAction="http://tempuri.org/SelectMusteriById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MusteriWebService">
+    <wsdl:port name="MusteriWebServiceSoap" binding="tns:MusteriWebServiceSoap">
+      <soap:address location="http://localhost:61799/MusteriWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MusteriWebServiceSoap12" binding="tns:MusteriWebServiceSoap12">
+      <soap12:address location="http://localhost:61799/MusteriWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

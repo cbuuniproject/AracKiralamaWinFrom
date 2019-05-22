@@ -55,12 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\AracService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\CalisanService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\KiralamaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\KullaniciService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MusteriService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -88,6 +103,12 @@
     <Compile Include="frm_AracEkle.Designer.cs">
       <DependentUpon>frm_AracEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_AracGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AracGoruntule.Designer.cs">
+      <DependentUpon>frm_AracGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_AracGuncelle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +127,29 @@
     <Compile Include="frm_KiralamaGoruntule.Designer.cs">
       <DependentUpon>frm_KiralamaGoruntule.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MusteriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MusteriEkle.Designer.cs">
+      <DependentUpon>frm_MusteriEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MusteriListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MusteriListele.Designer.cs">
+      <DependentUpon>frm_MusteriListele.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_PersonelEkle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_PersonelEkle.Designer.cs">
       <DependentUpon>frm_PersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PersonelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PersonelList.Designer.cs">
+      <DependentUpon>frm_PersonelList.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_PersonelSil.cs">
       <SubType>Form</SubType>
@@ -160,6 +199,9 @@
     <EmbeddedResource Include="frm_AracEkle.resx">
       <DependentUpon>frm_AracEkle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_AracGoruntule.resx">
+      <DependentUpon>frm_AracGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_AracGuncelle.resx">
       <DependentUpon>frm_AracGuncelle.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,8 +211,17 @@
     <EmbeddedResource Include="frm_KiralamaGoruntule.resx">
       <DependentUpon>frm_KiralamaGoruntule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MusteriEkle.resx">
+      <DependentUpon>frm_MusteriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MusteriListele.resx">
+      <DependentUpon>frm_MusteriListele.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_PersonelEkle.resx">
       <DependentUpon>frm_PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PersonelList.resx">
+      <DependentUpon>frm_PersonelList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_PersonelSil.resx">
       <DependentUpon>frm_PersonelSil.cs</DependentUpon>
@@ -199,6 +250,19 @@
     <EmbeddedResource Include="frm_Sirket.resx">
       <DependentUpon>frm_Sirket.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\AracService\AracKiralamaSistemi.AracService.Arac.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\AracKiralamaSistemi.AracService.InsertAracResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\AracKiralamaSistemi.AracService.SelectAllAracsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\AracKiralamaSistemi.AracService.SelectAracByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AracService\AracWebService.wsdl" />
     <None Include="Connected Services\CalisanService\AracKiralamaSistemi.CalisanService.Calisan.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -212,6 +276,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CalisanService\CalisanWebService.wsdl" />
+    <None Include="Connected Services\KiralamaService\AracKiralamaSistemi.KiralamaService.InsertKiralamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\KiralamaService\AracKiralamaSistemi.KiralamaService.Kiralama.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\KiralamaService\AracKiralamaSistemi.KiralamaService.SelectAllKiralamasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\KiralamaService\AracKiralamaSistemi.KiralamaService.SelectKiralamaByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\KiralamaService\KiralamaWebService.wsdl" />
+    <None Include="Connected Services\KullaniciService\AracKiralamaSistemi.KullaniciService.idAlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\KullaniciService\AracKiralamaSistemi.KullaniciService.InsertKullaniciResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -228,6 +308,19 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\KullaniciService\KullaniciWebService.wsdl" />
+    <None Include="Connected Services\MusteriService\AracKiralamaSistemi.MusteriService.InsertMusteriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\AracKiralamaSistemi.MusteriService.Musteri.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\AracKiralamaSistemi.MusteriService.SelectAllMusterisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\AracKiralamaSistemi.MusteriService.SelectMusteriByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriService\MusteriWebService.wsdl" />
     <None Include="Connected Services\SirketService\AracKiralamaSistemi.SirketService.InsertSirketResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -259,21 +352,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AracService\" />
     <WCFMetadataStorage Include="Connected Services\CalisanService\" />
+    <WCFMetadataStorage Include="Connected Services\KiralamaService\" />
     <WCFMetadataStorage Include="Connected Services\KullaniciService\" />
+    <WCFMetadataStorage Include="Connected Services\MusteriService\" />
     <WCFMetadataStorage Include="Connected Services\SirketService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KullaniciService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KullaniciService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KullaniciService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\CalisanService\configuration91.svcinfo" />
@@ -295,6 +379,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SirketService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AracService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KullaniciService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KullaniciService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KullaniciService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KiralamaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KiralamaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KiralamaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MusteriService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

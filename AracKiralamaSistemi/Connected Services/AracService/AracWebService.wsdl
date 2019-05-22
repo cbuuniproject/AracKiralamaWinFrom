@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertArac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Arac" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Arac">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="marka" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="minEhliyetYasi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="minYasSiniri" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="gunlukMaxKmSiniri" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="anlikKm" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="airbagSayisi" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="bagajHacmi" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="koltukSayisi" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="gunlukFiyat" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sirket">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirketAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sehir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aracSayisi" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketPuani" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertAracResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertAracResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteArac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAracResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAracResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllAracs">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllAracsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllAracsResult" type="tns:ArrayOfArac" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArac">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Arac" nillable="true" type="tns:Arac" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectAracById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAracByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAracByIdResult" type="tns:Arac" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertAracSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertArac" />
+  </wsdl:message>
+  <wsdl:message name="InsertAracSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAracResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAracSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteArac" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAracSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAracResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllAracsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllAracs" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllAracsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllAracsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAracByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAracById" />
+  </wsdl:message>
+  <wsdl:message name="SelectAracByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAracByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AracWebServiceSoap">
+    <wsdl:operation name="InsertArac">
+      <wsdl:input message="tns:InsertAracSoapIn" />
+      <wsdl:output message="tns:InsertAracSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArac">
+      <wsdl:input message="tns:DeleteAracSoapIn" />
+      <wsdl:output message="tns:DeleteAracSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAracs">
+      <wsdl:input message="tns:SelectAllAracsSoapIn" />
+      <wsdl:output message="tns:SelectAllAracsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAracById">
+      <wsdl:input message="tns:SelectAracByIdSoapIn" />
+      <wsdl:output message="tns:SelectAracByIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AracWebServiceSoap" type="tns:AracWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertArac">
+      <soap:operation soapAction="http://tempuri.org/InsertArac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArac">
+      <soap:operation soapAction="http://tempuri.org/DeleteArac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAracs">
+      <soap:operation soapAction="http://tempuri.org/SelectAllAracs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAracById">
+      <soap:operation soapAction="http://tempuri.org/SelectAracById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AracWebServiceSoap12" type="tns:AracWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertArac">
+      <soap12:operation soapAction="http://tempuri.org/InsertArac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArac">
+      <soap12:operation soapAction="http://tempuri.org/DeleteArac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAracs">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllAracs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAracById">
+      <soap12:operation soapAction="http://tempuri.org/SelectAracById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AracWebService">
+    <wsdl:port name="AracWebServiceSoap" binding="tns:AracWebServiceSoap">
+      <soap:address location="http://localhost:61799/AracWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AracWebServiceSoap12" binding="tns:AracWebServiceSoap12">
+      <soap12:address location="http://localhost:61799/AracWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

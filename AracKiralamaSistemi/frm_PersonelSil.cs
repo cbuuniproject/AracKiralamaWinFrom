@@ -16,5 +16,10 @@ namespace AracKiralamaSistemi
         {
             InitializeComponent();
         }
-    }
+
+		private void btnPersonelSil_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertKiralama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:Kiralama" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Kiralama">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="kiralamaId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="musteriId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="verilisTarihi" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="geriAlisTarihi" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="verilisKm" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sonKm" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ucret" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
+          <s:element minOccurs="0" maxOccurs="1" name="arac" type="tns:Arac" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sirket">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirketAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sehir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="aracSayisi" type="s:unsignedShort" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketPuani" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Arac">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="aracId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sirketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="marka" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="minEhliyetYasi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="minYasSiniri" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="gunlukMaxKmSiniri" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="anlikKm" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="airbagSayisi" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="bagajHacmi" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="koltukSayisi" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="gunlukFiyat" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sirket" type="tns:Sirket" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertKiralamaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertKiralamaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKiralama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kiralamaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKiralamaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteKiralamaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllKiralamas">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllKiralamasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllKiralamasResult" type="tns:ArrayOfKiralama" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKiralama">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Kiralama" nillable="true" type="tns:Kiralama" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectKiralamaById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kiralamaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectKiralamaByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectKiralamaByIdResult" type="tns:Kiralama" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertKiralamaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertKiralama" />
+  </wsdl:message>
+  <wsdl:message name="InsertKiralamaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertKiralamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKiralamaSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteKiralama" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKiralamaSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteKiralamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllKiralamasSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllKiralamas" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllKiralamasSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllKiralamasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectKiralamaByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectKiralamaById" />
+  </wsdl:message>
+  <wsdl:message name="SelectKiralamaByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectKiralamaByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KiralamaWebServiceSoap">
+    <wsdl:operation name="InsertKiralama">
+      <wsdl:input message="tns:InsertKiralamaSoapIn" />
+      <wsdl:output message="tns:InsertKiralamaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKiralama">
+      <wsdl:input message="tns:DeleteKiralamaSoapIn" />
+      <wsdl:output message="tns:DeleteKiralamaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllKiralamas">
+      <wsdl:input message="tns:SelectAllKiralamasSoapIn" />
+      <wsdl:output message="tns:SelectAllKiralamasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectKiralamaById">
+      <wsdl:input message="tns:SelectKiralamaByIdSoapIn" />
+      <wsdl:output message="tns:SelectKiralamaByIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KiralamaWebServiceSoap" type="tns:KiralamaWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertKiralama">
+      <soap:operation soapAction="http://tempuri.org/InsertKiralama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKiralama">
+      <soap:operation soapAction="http://tempuri.org/DeleteKiralama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllKiralamas">
+      <soap:operation soapAction="http://tempuri.org/SelectAllKiralamas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectKiralamaById">
+      <soap:operation soapAction="http://tempuri.org/SelectKiralamaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KiralamaWebServiceSoap12" type="tns:KiralamaWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertKiralama">
+      <soap12:operation soapAction="http://tempuri.org/InsertKiralama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKiralama">
+      <soap12:operation soapAction="http://tempuri.org/DeleteKiralama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllKiralamas">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllKiralamas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectKiralamaById">
+      <soap12:operation soapAction="http://tempuri.org/SelectKiralamaById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KiralamaWebService">
+    <wsdl:port name="KiralamaWebServiceSoap" binding="tns:KiralamaWebServiceSoap">
+      <soap:address location="http://localhost:61799/KiralamaWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KiralamaWebServiceSoap12" binding="tns:KiralamaWebServiceSoap12">
+      <soap12:address location="http://localhost:61799/KiralamaWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

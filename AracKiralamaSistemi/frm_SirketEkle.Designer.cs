@@ -1,6 +1,6 @@
 ﻿namespace AracKiralamaSistemi
 {
-    partial class frm_SirketEkle
+    partial class frm_Secim
     {
         /// <summary>
         /// Required designer variable.

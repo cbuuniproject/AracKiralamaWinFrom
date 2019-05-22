@@ -24,6 +24,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="idAl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="idAlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAlResult" type="tns:Kullanici" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="KullaniciDogrulama">
         <s:complexType>
           <s:sequence>
@@ -100,6 +114,12 @@
   <wsdl:message name="InsertKullaniciSoapOut">
     <wsdl:part name="parameters" element="tns:InsertKullaniciResponse" />
   </wsdl:message>
+  <wsdl:message name="idAlSoapIn">
+    <wsdl:part name="parameters" element="tns:idAl" />
+  </wsdl:message>
+  <wsdl:message name="idAlSoapOut">
+    <wsdl:part name="parameters" element="tns:idAlResponse" />
+  </wsdl:message>
   <wsdl:message name="KullaniciDogrulamaSoapIn">
     <wsdl:part name="parameters" element="tns:KullaniciDogrulama" />
   </wsdl:message>
@@ -135,6 +155,10 @@
       <wsdl:input message="tns:InsertKullaniciSoapIn" />
       <wsdl:output message="tns:InsertKullaniciSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="idAl">
+      <wsdl:input message="tns:idAlSoapIn" />
+      <wsdl:output message="tns:idAlSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="KullaniciDogrulama">
       <wsdl:input message="tns:KullaniciDogrulamaSoapIn" />
       <wsdl:output message="tns:KullaniciDogrulamaSoapOut" />
@@ -160,6 +184,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="InsertKullanici">
       <soap:operation soapAction="http://tempuri.org/InsertKullanici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="idAl">
+      <soap:operation soapAction="http://tempuri.org/idAl" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -217,6 +250,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="InsertKullanici">
       <soap12:operation soapAction="http://tempuri.org/InsertKullanici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="idAl">
+      <soap12:operation soapAction="http://tempuri.org/idAl" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

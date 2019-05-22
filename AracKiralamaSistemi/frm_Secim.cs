@@ -25,7 +25,8 @@ namespace AracKiralamaSistemi
 
         private void btn_Musteri_Click(object sender, EventArgs e)
         {
-
-        }
+			frm_AdminLogin adminLogin = new frm_AdminLogin();
+			adminLogin.ShowDialog();
+		}
     }
 }

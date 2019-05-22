@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AracKiralamaSistemi.SirketService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,19 @@ namespace AracKiralamaSistemi
         {
             InitializeComponent();
         }
-    }
+
+		private void şirketEkleToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Secim frm_Secim = new frm_Secim();
+			frm_Secim.ShowDialog();
+		}
+
+		private void btnListele_Click(object sender, EventArgs e)
+		{
+			using (var sirketSoapClient = new SirketWebServiceSoapClient())
+			{
+				dataGridView1.DataSource = sirketSoapClient.SelectAllSirkets();
+			}
+		}
+	}
 }

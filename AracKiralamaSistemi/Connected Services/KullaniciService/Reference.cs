@@ -117,6 +117,13 @@ namespace AracKiralamaSistemi.KullaniciService {
         System.Threading.Tasks.Task<AracKiralamaSistemi.KullaniciService.InsertKullaniciResponse> InsertKullaniciAsync(AracKiralamaSistemi.KullaniciService.InsertKullaniciRequest request);
         
         // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/idAl", ReplyAction="*")]
+        AracKiralamaSistemi.KullaniciService.idAlResponse idAl(AracKiralamaSistemi.KullaniciService.idAlRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/idAl", ReplyAction="*")]
+        System.Threading.Tasks.Task<AracKiralamaSistemi.KullaniciService.idAlResponse> idAlAsync(AracKiralamaSistemi.KullaniciService.idAlRequest request);
+        
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KullaniciDogrulama", ReplyAction="*")]
         AracKiralamaSistemi.KullaniciService.KullaniciDogrulamaResponse KullaniciDogrulama(AracKiralamaSistemi.KullaniciService.KullaniciDogrulamaRequest request);
         
@@ -215,6 +222,74 @@ namespace AracKiralamaSistemi.KullaniciService {
         
         public InsertKullaniciResponseBody(bool InsertKullaniciResult) {
             this.InsertKullaniciResult = InsertKullaniciResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class idAlRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="idAl", Namespace="http://tempuri.org/", Order=0)]
+        public AracKiralamaSistemi.KullaniciService.idAlRequestBody Body;
+        
+        public idAlRequest() {
+        }
+        
+        public idAlRequest(AracKiralamaSistemi.KullaniciService.idAlRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class idAlRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string username;
+        
+        public idAlRequestBody() {
+        }
+        
+        public idAlRequestBody(string username) {
+            this.username = username;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class idAlResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="idAlResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AracKiralamaSistemi.KullaniciService.idAlResponseBody Body;
+        
+        public idAlResponse() {
+        }
+        
+        public idAlResponse(AracKiralamaSistemi.KullaniciService.idAlResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class idAlResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AracKiralamaSistemi.KullaniciService.Kullanici idAlResult;
+        
+        public idAlResponseBody() {
+        }
+        
+        public idAlResponseBody(AracKiralamaSistemi.KullaniciService.Kullanici idAlResult) {
+            this.idAlResult = idAlResult;
         }
     }
     
@@ -469,6 +544,31 @@ namespace AracKiralamaSistemi.KullaniciService {
             inValue.Body = new AracKiralamaSistemi.KullaniciService.InsertKullaniciRequestBody();
             inValue.Body.entity = entity;
             return ((AracKiralamaSistemi.KullaniciService.KullaniciWebServiceSoap)(this)).InsertKullaniciAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AracKiralamaSistemi.KullaniciService.idAlResponse AracKiralamaSistemi.KullaniciService.KullaniciWebServiceSoap.idAl(AracKiralamaSistemi.KullaniciService.idAlRequest request) {
+            return base.Channel.idAl(request);
+        }
+        
+        public AracKiralamaSistemi.KullaniciService.Kullanici idAl(string username) {
+            AracKiralamaSistemi.KullaniciService.idAlRequest inValue = new AracKiralamaSistemi.KullaniciService.idAlRequest();
+            inValue.Body = new AracKiralamaSistemi.KullaniciService.idAlRequestBody();
+            inValue.Body.username = username;
+            AracKiralamaSistemi.KullaniciService.idAlResponse retVal = ((AracKiralamaSistemi.KullaniciService.KullaniciWebServiceSoap)(this)).idAl(inValue);
+            return retVal.Body.idAlResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AracKiralamaSistemi.KullaniciService.idAlResponse> AracKiralamaSistemi.KullaniciService.KullaniciWebServiceSoap.idAlAsync(AracKiralamaSistemi.KullaniciService.idAlRequest request) {
+            return base.Channel.idAlAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AracKiralamaSistemi.KullaniciService.idAlResponse> idAlAsync(string username) {
+            AracKiralamaSistemi.KullaniciService.idAlRequest inValue = new AracKiralamaSistemi.KullaniciService.idAlRequest();
+            inValue.Body = new AracKiralamaSistemi.KullaniciService.idAlRequestBody();
+            inValue.Body.username = username;
+            return ((AracKiralamaSistemi.KullaniciService.KullaniciWebServiceSoap)(this)).idAlAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

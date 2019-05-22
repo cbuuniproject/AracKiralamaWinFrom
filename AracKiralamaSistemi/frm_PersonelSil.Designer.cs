@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPersonelSil = new System.Windows.Forms.Button();
-            this.dgwPersonelListesi = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwPersonelListesi)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // btnPersonelSil
-            // 
-            this.btnPersonelSil.Location = new System.Drawing.Point(618, 359);
-            this.btnPersonelSil.Name = "btnPersonelSil";
-            this.btnPersonelSil.Size = new System.Drawing.Size(170, 79);
-            this.btnPersonelSil.TabIndex = 3;
-            this.btnPersonelSil.Text = "Personel Sil";
-            this.btnPersonelSil.UseVisualStyleBackColor = true;
-            // 
-            // dgwPersonelListesi
-            // 
-            this.dgwPersonelListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwPersonelListesi.Location = new System.Drawing.Point(12, 12);
-            this.dgwPersonelListesi.Name = "dgwPersonelListesi";
-            this.dgwPersonelListesi.Size = new System.Drawing.Size(776, 341);
-            this.dgwPersonelListesi.TabIndex = 2;
-            // 
-            // frm_PersonelSil
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPersonelSil);
-            this.Controls.Add(this.dgwPersonelListesi);
-            this.Name = "frm_PersonelSil";
-            this.Text = "frm_PersonelSil";
-            ((System.ComponentModel.ISupportInitialize)(this.dgwPersonelListesi)).EndInit();
-            this.ResumeLayout(false);
+			this.btnPersonelSil = new System.Windows.Forms.Button();
+			this.dgwPersonelListesi = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dgwPersonelListesi)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// btnPersonelSil
+			// 
+			this.btnPersonelSil.Location = new System.Drawing.Point(824, 442);
+			this.btnPersonelSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnPersonelSil.Name = "btnPersonelSil";
+			this.btnPersonelSil.Size = new System.Drawing.Size(227, 97);
+			this.btnPersonelSil.TabIndex = 3;
+			this.btnPersonelSil.Text = "Personel Sil";
+			this.btnPersonelSil.UseVisualStyleBackColor = true;
+			this.btnPersonelSil.Click += new System.EventHandler(this.btnPersonelSil_Click);
+			// 
+			// dgwPersonelListesi
+			// 
+			this.dgwPersonelListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwPersonelListesi.Location = new System.Drawing.Point(16, 15);
+			this.dgwPersonelListesi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dgwPersonelListesi.Name = "dgwPersonelListesi";
+			this.dgwPersonelListesi.Size = new System.Drawing.Size(1035, 420);
+			this.dgwPersonelListesi.TabIndex = 2;
+			// 
+			// frm_PersonelSil
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1067, 554);
+			this.Controls.Add(this.btnPersonelSil);
+			this.Controls.Add(this.dgwPersonelListesi);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Name = "frm_PersonelSil";
+			this.Text = "frm_PersonelSil";
+			((System.ComponentModel.ISupportInitialize)(this.dgwPersonelListesi)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
